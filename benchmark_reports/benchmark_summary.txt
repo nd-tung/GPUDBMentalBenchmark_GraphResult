@@ -1,0 +1,28 @@
+================================================================================
+GPU (Metal) vs DuckDB Benchmark Comparison Report
+================================================================================
+
+SF-1 Dataset (1GB) Summary:
+--------------------------------------------------------------------------------
+Average GPU Speedup: 17.84×
+Maximum GPU Speedup: 42.99× (Selection < 1000)
+Minimum GPU Speedup: 2.12× (TPC-H Query 1)
+
+SF-10 Dataset (10GB) Summary:
+--------------------------------------------------------------------------------
+Average GPU Speedup: 7.94×
+Maximum GPU Speedup: 20.59× (SUM (l_quantity))
+Minimum GPU Speedup: 0.99× (TPC-H Query 9)
+
+Key Insights:
+--------------------------------------------------------------------------------
+• GPU outperforms DuckDB in 10/10 queries for SF-1
+• GPU outperforms DuckDB in 9/10 queries for SF-10
+
+Performance Analysis by Category:
+• Selection queries: SF-1 avg 41.00×, SF-10 avg 13.22×
+• Aggregation: SF-1 26.68×, SF-10 20.59×
+• Join operations: SF-1 6.09×, SF-10 7.71×
+• TPC-H queries: SF-1 avg 4.53×, SF-10 avg 2.29×
+
+================================================================================

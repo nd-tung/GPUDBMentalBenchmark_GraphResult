@@ -1,0 +1,59 @@
+GPU vs DuckDB Benchmark Comparison
+===================================
+
+SF-1 Comparison (ms)
+Query                 | GPU Time | DuckDB Time
+----------------------|----------|-------------
+Selection < 1000      |    0.884 |      38.000
+Selection < 10000     |    0.900 |      37.190
+Selection < 50000     |    0.946 |      36.610
+SUM(l_quantity)       |    1.325 |      35.340
+Hash Join             |   12.335 |      75.150
+TPC-H Query 1         |   39.660 |      84.140
+TPC-H Query 3         |   12.744 |      58.640
+TPC-H Query 6         |    4.480 |      45.850
+TPC-H Query 9         |   40.480 |     110.260
+TPC-H Query 13        |   34.969 |     103.720
+
+SF-1 Speedup (DuckDB / GPU)
+Query                 | Speedup (×)
+----------------------|--------------
+Selection < 1000      |        42.99
+Selection < 10000     |        41.33
+Selection < 50000     |        38.69
+SUM(l_quantity)       |        26.68
+Hash Join             |         6.09
+TPC-H Query 1         |         2.12
+TPC-H Query 3         |         4.60
+TPC-H Query 6         |        10.23
+TPC-H Query 9         |         2.72
+TPC-H Query 13        |         2.97
+
+
+SF-10 Comparison (ms)
+Query                 | GPU Time | DuckDB Time
+----------------------|----------|-------------
+Selection < 1000      |   10.172 |     189.090
+Selection < 10000     |    8.003 |      85.030
+Selection < 50000     |    8.133 |      84.900
+SUM(l_quantity)       |    5.050 |     103.950
+Hash Join             |   62.510 |     481.640
+TPC-H Query 1         |  331.301 |     562.720
+TPC-H Query 3         |   65.985 |     303.830
+TPC-H Query 6         |  124.270 |     162.420
+TPC-H Query 9         |  826.500 |     821.980
+TPC-H Query 13        |  268.669 |     759.030
+
+SF-10 Speedup (DuckDB / GPU)
+Query                 | Speedup (×)
+----------------------|--------------
+Selection < 1000      |        18.59
+Selection < 10000     |        10.62
+Selection < 50000     |        10.44
+SUM(l_quantity)       |        20.59
+Hash Join             |         7.71
+TPC-H Query 1         |         1.70
+TPC-H Query 3         |         4.60
+TPC-H Query 6         |         1.31
+TPC-H Query 9         |         0.99
+TPC-H Query 13        |         2.83
